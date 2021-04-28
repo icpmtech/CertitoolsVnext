@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CertitoolsVnext.iml" filepath="$PROJECT_DIR$/CertitoolsVnext.iml" />
+      <module fileurl="file://$PROJECT_DIR$/implementation-certitecnica/implementation-certitecnica.iml" filepath="$PROJECT_DIR$/implementation-certitecnica/implementation-certitecnica.iml" />
     </modules>
   </component>
 </project>

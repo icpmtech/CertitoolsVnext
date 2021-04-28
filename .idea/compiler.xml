@@ -6,11 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="implementation-certitecnica" />
         <module name="CertitoolsVnext" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="CertitoolsVnext" target="1.8" />
+      <module name="implementation-certitecnica" target="1.8" />
+      <module name="main-implementation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
