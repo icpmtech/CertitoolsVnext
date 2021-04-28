@@ -1,0 +1,1 @@
+INSERT INTO public.sm_recurrencenotification (id, recurrence_id, user_id) VALUES (1, 1, 4697);

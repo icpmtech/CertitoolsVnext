@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="hibernate-tools">
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/hibernate-tools/javassist.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/hibernate-tools/hibernate3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/hibernate-tools/commons-logging-1.1.1.jar" />
+  </library>
+  <library name="jboss">
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/config/jboss/postgresql-8.3-603.jdbc4.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/config/jboss/jcr-1.0.jar" />
+  </library>
+  <library name="libs">
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/postgresql-8.3-603.jdbc4.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/log4j.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/hibernate-all.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/jboss-ejb3-all.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/commons-logging.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/jcainflow.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/thirdparty-all.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/commons-lang-2.3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/mail.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/jcr-1.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/jboss-embeddable/libs/jms-ra.jar" />
+  </library>
+  <library name="libs1">
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jboss-ejb3x.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jackrabbit-ocm-1.5.3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jackrabbit-api-1.5.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/commons-logging.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jcr-1.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/mail.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jackrabbit-ocm-nodemanagement-1.5.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jbosssx.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/commons-codec-1.3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/cglib.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/commons-io-1.3.2.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/commons-compress-1.11.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/servlet-api.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jackrabbit-jcr-commons-1.5.5.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jboss-transaction.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jboss-j2ee.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/commons-lang-2.3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/commons-beanutils-1.8.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jboss-annotations-ejb3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/ejb3-persistence.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/ejb/libs/jackrabbit-core-1.5.5.jar" />
+  </library>
+  <library name="libs2">
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/jsp-api-2.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/commons-fileupload-1.2.1.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/iText-rtf-2.1.6.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/urlrewrite-3.2.0.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/commons-lang-2.3.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/sitemesh-2.4.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/standard.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/servlet-api.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/htmlcleaner-2.1.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/commons-logging.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/commons-collections-3.1.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/stripes-1.5.1.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/Aspose.Words.jdk16-4.0.2.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/commons-compress-1.11.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/htmlcleaner2_1.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/commons-io-1.3.2.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/opencsv-1.8.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/poi-3.2-FINAL-20081019.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/cachefilter-1.0.2.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/displaytag-1.2-certitools.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/stripes-security-1.4.2.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/iText-2.1.6-certitools.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/java-core-2.5-SNAPSHOT.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/displaytag-export-poi-1.2.jar" />
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/war/libs/stripejb3-1.0.1.jar" />
+  </library>
+  <library name="testng-5.8-jdk15">
+    <archive path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/tools/testNG/libs/testng-5.8-jdk15.jar" />
+  </library>
+</eclipse-userlibraries>
+

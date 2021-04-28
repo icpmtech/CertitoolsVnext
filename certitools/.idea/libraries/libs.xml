@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/hibernate-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/jboss-ejb3-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/jcainflow.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/thirdparty-all.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/jms-ra.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/commons-lang3-3.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/jcr-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/log4j-1.2-api-2.14.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/mail-1.4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tools/jboss-embeddable/libs/postgresql-42.2.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

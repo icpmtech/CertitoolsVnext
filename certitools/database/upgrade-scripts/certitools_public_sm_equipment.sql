@@ -1,0 +1,1 @@
+INSERT INTO public.sm_equipment (id, name, contract_id) VALUES (1, 'Sem equipamento', null);

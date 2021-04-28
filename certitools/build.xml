@@ -1,0 +1,430 @@
+<project name="CertiTools" default="init" basedir=".">
+    <target name="init">
+        <tstamp/>
+
+        <!-- Environment specific properties for this build -->
+        <property file="build.properties"/>
+
+        <!--Directories-->
+        <property name="target.dir" value="target"/>
+        <property name="src.dir" value="src"/>
+        <property name="classes.dir" value="classes"/>
+        <property name="main.dir" value="main"/>
+        <property name="resources.dir" value="resources"/>
+        <property name="meta-inf.dir" value="meta-inf"/>
+        <property name="libs.dir" value="libs"/>
+        <property name="libs.included" value="*.jar"/>
+        <property name="libs.war.excluded"
+                  value="commons-logging.jar, jsp-api-2.0.jar, servlet-api.jar"/>
+        <property name="libs.ebj.excluded"
+                  value="servlet-api.jar, ejb3-persistence.jar, jboss-annotations-ejb3.jar, jboss-ejb3x.jar,
+                  jcr-1.0.jar, mail.jar, commons-logging.jar, commons-codec-1.3.jar, jbosssx.jar,
+                  jboss-transaction.jar, jackrabbit-api-1.5.0.jar, jackrabbit-core-1.5.5.jar,
+                  jackrabbit-jcr-commons-1.5.5.jar, jboss-j2ee.jar, cglib.jar, jboss-transaction.jar, jbosssx.jar"/>
+        <property name="libs.ebj.excluded.dev"
+                  value="servlet-api.jar, ejb3-persistence.jar, jboss-annotations-ejb3.jar, jboss-ejb3x.jar,
+                  jcr-1.0.jar, mail.jar, commons-logging.jar, commons-codec-1.3.jar, jbosssx.jar,
+                  jboss-transaction.jar, jackrabbit-api-1.5.0.jar, jackrabbit-core-1.5.5.jar,
+                  jackrabbit-jcr-commons-1.5.5.jar, jboss-j2ee.jar, jboss-transaction.jar, jbosssx.jar"/>
+        <property name="webapp" value="webapp"/>
+        <property name="web-inf" value="WEB-INF"/>
+        <property name="war.dir" value="war"/>
+        <property name="ejb.dir" value="ejb"/>
+        <property name="java.dir" value="java"/>
+        <property name="docs.dir" value="docs"/>
+        <property name="config.dir" value="config"/>
+
+        <!-- Compile attributes-->
+        <property name="compile.debug" value="on"/>
+        <property name="compile.deprecation" value="false"/>
+
+        <!-- deployers attributes -->
+        <property name="project.name" value="certitools"/>
+        <property name="war.file" value="${project.name}.war"/>
+        <property name="ear.file" value="${project.name}.ear"/>
+        <property name="jar.file" value="${project.name}-ejb.jar"/>
+        <property name="war-license-management.file" value="${project.name}-license-management.war"/>
+
+        <!-- Test attributes-->
+        <property name="tools.dir" value="tools"/>
+        <property name="jboss-embeddable.dir" value="jboss-embeddable"/>
+        <property name="testNG.dir" value="testNG"/>
+        <property name="test.dir" value="test"/>
+        <property name="build.tests.dir" value="${target.dir}/tests-output"/>
+        <property name="test.src.dir" value="${ejb.dir}/${src.dir}/${test.dir}/${java.dir}"/>
+        <property name="jboss-embeddable.libs.dir" value="${tools.dir}/${jboss-embeddable.dir}/${libs.dir}"/>
+
+        <!-- license-->
+        <property name="license.dir" value="com/criticalsoftware/certitools/presentation/action/license/"/>
+
+        <taskdef name="instrument" classpath="tools/hibernate-tools/hibernate3.jar"
+                 classname="org.hibernate.tool.instrument.javassist.InstrumentTask">
+            <classpath location="tools/hibernate-tools/commons-logging-1.1.1.jar"/>
+            <classpath location="tools/hibernate-tools/javassist.jar"/>
+        </taskdef>
+    </target>
+
+    <target name="clean" depends="init" description="Delete target folder">
+        <delete dir="${war.dir}/${target.dir}"/>
+        <delete dir="${ejb.dir}/${target.dir}"/>
+        <delete dir="${target.dir}"/>
+        <delete dir="${ejb.dir}/${docs.dir}"/>
+    </target>
+
+    <target name="prepare" depends="init" description="Create target directories">
+        <!-- create target directory-->
+        <mkdir dir="${war.dir}/${target.dir}/${classes.dir}"/>
+        <mkdir dir="${ejb.dir}/${target.dir}/${classes.dir}"/>
+        <mkdir dir="${ejb.dir}/${docs.dir}"/>
+        <mkdir dir="${target.dir}"/>
+    </target>
+
+    <target name="javadocs" depends="prepare">
+        <javadoc packagenames="com.criticalsoftware.*"
+                 sourcepath="${ejb.dir}/${src.dir}"
+                 defaultexcludes="yes"
+                 destdir="${ejb.dir}/${docs.dir}"
+                 use="true"
+                 windowtitle="${project.name} API">
+            <classpath>
+                <fileset dir="${ejb.dir}/${libs.dir}" includes="${libs.included}"/>
+                <fileset dir="${ejb.dir}/${libs.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+            <doctitle><![CDATA[<h1>${project.name}</h1>]]></doctitle>
+            <bottom><![CDATA[<i>Copyright &#169; Critical Software SA. All Rights Reserved.</i>]]></bottom>
+        </javadoc>
+    </target>
+
+    <target name="compile-ejb" depends="prepare"
+            description="Compile EJB java classes">
+        <javac srcdir="${ejb.dir}/${src.dir}/${main.dir}/${java.dir}"
+               fork="yes"
+               debug="${compile.debug}"
+               deprecation="${compile.deprecation}"
+               destdir="${ejb.dir}/${target.dir}/${classes.dir}/" classpath="${ejb.dir}/${libs.dir}">
+            <classpath>
+                <fileset dir="${ejb.dir}/${libs.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+
+        <!-- Instrument LegalDocument.class-->
+        <instrument verbose="true">
+            <fileset dir="${ejb.dir}/${target.dir}/${classes.dir}/com/criticalsoftware/certitools/entities/">
+                <include name="LegalDocument.class"/>
+            </fileset>
+        </instrument>
+
+    </target>
+
+    <target name="compile-war" depends="compile-ejb"
+            description="Compile WAR java classes and copy them to target folder">
+        <javac srcdir="${war.dir}/${src.dir}/${main.dir}/${java.dir}"
+               fork="yes"
+               debug="${compile.debug}"
+               deprecation="${compile.deprecation}"
+               destdir="${war.dir}/${target.dir}/${classes.dir}" classpath="${ejb.dir}/${target.dir}/${classes.dir}">
+            <classpath>
+                <fileset dir="${war.dir}/${libs.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <!--Work around due to javac bug-->
+                <fileset dir="${ejb.dir}/${libs.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+
+        <!-- Copy Resources -->
+        <copy todir="${war.dir}/${target.dir}/${classes.dir}">
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${resources.dir}"/>
+        </copy>
+    </target>
+
+
+    <target name="compile" depends="compile-ejb, compile-war"
+            description="Compile WAR and EJB java classes and copy them to target folder">
+    </target>
+
+    <target name="compile-tests" depends="compile-ejb" description="Compile all test classes">
+
+        <path id="ejb3.embedded.path">
+            <fileset dir="${jboss-embeddable.libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+
+        <path id="testNG.path">
+            <fileset dir="${tools.dir}/${testNG.dir}/${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+
+        <path id="base.path">
+            <!-- <pathelement location="${build.classes.dir}"/> -->
+            <pathelement location="${ejb.dir}/${target.dir}/${classes.dir}"/>
+            <fileset dir="${ejb.dir}/${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+
+        <mkdir dir="${build.tests.dir}/${classes.dir}"/>
+        <javac destdir="${build.tests.dir}/${classes.dir}"
+               classpathref="base.path"
+               debug="on"
+               deprecation="off"
+               optimize="on"
+               source="1.8"
+               target="1.8">
+            <src path="${test.src.dir}"/>
+            <classpath refid="ejb3.embedded.path"/>
+            <classpath refid="testNG.path"/>
+        </javac>
+    </target>
+
+    <target name="war" depends="compile" description="Compile and Create WAR">
+        <war destfile="${war.dir}/${target.dir}/${war.file}"
+             webxml="${war.dir}/${src.dir}/${main.dir}/${webapp}/${web-inf}/web.xml">
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${webapp}" excludes="**/license/*"/>
+            <lib dir="${war.dir}/${libs.dir}" excludes="${libs.war.excluded}"/>
+            <classes dir="${war.dir}/${target.dir}/${classes.dir}" excludes="**/license/*"/>
+        </war>
+    </target>
+
+
+    <target name="war-license-management" depends="compile" description="Compile and Create WAR">
+        <war destfile="${war.dir}/${target.dir}/${war-license-management.file}"
+             webxml="${config.dir}/license/web.xml">
+            <fileset dir="war/src/main/webapp/" includes="**/WEB-INF/jsps/license/**"
+                     excludes="**/WEB-INF/jsps/license/index.jsp, **/WEB-INF/web.xml"/>
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${webapp}" excludes="**/jsps/**, index.jsp, **web.xml** "/>
+            <fileset file="${war.dir}/${src.dir}/${main.dir}/${webapp}/${web-inf}/jsps/license/index.jsp"/>
+            <lib dir="${war.dir}/${libs.dir}" excludes="${libs.war.excluded}"/>
+            <classes dir="${war.dir}/${target.dir}/${classes.dir}" includes="**/license/**"/>
+            <classes dir="${war.dir}/${target.dir}/${classes.dir}" includes="**/action/*.class"/>
+            <classes dir="${war.dir}/${target.dir}/${classes.dir}" excludes="**/action/**"/>
+        </war>
+    </target>
+
+    <target name="ejb" depends="compile" description="Compile and Create EJB JAR">
+        <jar destfile="${ejb.dir}/${target.dir}/${jar.file}" basedir="${ejb.dir}/${target.dir}/${classes.dir}">
+            <fileset dir="${ejb.dir}/${src.dir}/${main.dir}/${resources.dir}"/>
+        </jar>
+    </target>
+
+    <target name="ear-with-lic-mang" depends="war, ejb, war-license-management"
+            description="Compile and Create EAR">
+        <!-- Create Final EAR -->
+        <ear destfile="${target.dir}/${ear.file}"
+             appxml="${config.dir}/application-with-lic-management.xml">
+            <!--<metainf file="${config.dir}/jboss-app.xml"/>-->
+            <fileset file="${war.dir}/${target.dir}/${war.file}"/>
+            <fileset file="${war.dir}/${target.dir}/${war-license-management.file}"/>
+            <fileset file="${ejb.dir}/${target.dir}/${jar.file}"/>
+            <fileset dir="${ejb.dir}/${libs.dir}" excludes="${libs.ebj.excluded}"/>
+        </ear>
+    </target>
+
+    <target name="ear" depends="war, ejb" description="Compile and Create EAR">
+        <!-- Create Final EAR -->
+        <ear destfile="${target.dir}/${ear.file}"
+             appxml="${config.dir}/application-without-lic-management.xml">
+            <!--<filename name="${config.dir}/jboss-app.xml"/>-->
+            <fileset file="${war.dir}/${target.dir}/${war.file}"/>
+            <fileset file="${ejb.dir}/${target.dir}/${jar.file}"/>
+            <fileset dir="${ejb.dir}/${libs.dir}" excludes="${libs.ebj.excluded}"/>
+        </ear>
+    </target>
+
+    <target name="deploy" depends="ear"
+            description="Compile, create EAR and copy it to deploy directory">
+        <copy todir="${deploy.dir}">
+            <fileset file="${target.dir}/${ear.file}"/>
+        </copy>
+    </target>
+
+    <target name="deploy-with-lic-mang" depends="ear-with-lic-mang"
+            description="Compile, create EAR and copy it to deploy directory">
+        <copy todir="${deploy.dir}">
+            <fileset file="${target.dir}/${ear.file}"/>
+        </copy>
+    </target>
+
+    <target name="undeploy" depends="init" description="Remove ear from JBoss deploy directory">
+        <delete file="${deploy.dir}/${ear.file}"/>
+        <delete dir="${deploy.dir}/${ear.file}"/>
+    </target>
+
+    <target name="run-all-test" depends="compile-tests, ejb" description="Run all tests">
+        <copy todir="${build.tests.dir}">
+            <fileset dir="${tools.dir}/${jboss-embeddable.dir}/conf">
+                <include name="*.properties"/>
+                <include name="*.xml"/>
+            </fileset>
+        </copy>
+
+        <path id="testng.path">
+            <pathelement location="${ejb.dir}/${target.dir}/${classes.dir}"/>
+            <pathelement location="${build.tests.dir}/${classes.dir}"/>
+            <pathelement location="${build.tests.dir}"/>
+
+            <fileset dir="${ejb.dir}/${target.dir}">
+                <include name="${jar.file}"/>
+            </fileset>
+            <fileset dir="${jboss-embeddable.libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="${tools.dir}/${testNG.dir}/${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+
+        <taskdef name="testng" classpath="${tools.dir}/${testNG.dir}/${libs.dir}/testng-5.8-jdk15.jar"
+                 classname="org.testng.TestNGAntTask"/>
+
+        <testng outputDir="${build.tests.dir}/test-report" verbose="2">
+            <classpath>
+                <path refid="testng.path"/>
+            </classpath>
+            <classfileset dir="${build.tests.dir}/${classes.dir}" includes="**/*.class"/>
+        </testng>
+    </target>
+
+    <target name="deploy-ear-exploded" depends="compile"
+            description="Compile, create EAR exploded  and copy it to deploy directory ">
+
+        <copy todir="${deploy.dir}/${ear.file}">
+            <fileset dir="${ejb.dir}/${libs.dir}" excludes="${libs.ebj.excluded}"/>
+        </copy>
+
+        <!--<copy todir="${deploy.dir}/${ear.file}/META-INF">
+            <fileset file="${config.dir}/jboss-app.xml"/>
+        </copy>-->
+
+        <copy file="${config.dir}/application-without-lic-management.xml"
+              tofile="${deploy.dir}/${ear.file}/META-INF/application.xml"/>
+
+        <copy todir="${deploy.dir}/${ear.file}/${jar.file}">
+            <fileset dir="${ejb.dir}/${target.dir}/${classes.dir}"/>
+            <fileset dir="${ejb.dir}/${src.dir}/${main.dir}/${resources.dir}"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}/WEB-INF">
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${webapp}/${web-inf}"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}/${web-inf}/lib">
+            <fileset dir="${war.dir}/${libs.dir}" excludes="${libs.war.excluded}"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}/${web-inf}/classes">
+            <fileset dir="${war.dir}/${target.dir}/classes"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}">
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${webapp}" excludes="WEB-INF"/>
+        </copy>
+    </target>
+
+    <target name="touch-ear-exploded" depends="deploy-ear-exploded" description="Touch application.xml">
+        <touch file="${deploy.dir}/${ear.file}/META-INF/application.xml"/>
+    </target>
+
+    <target name="run-one-test" depends="compile-tests, ejb" description="Run one test specified in build.properties">
+        <copy todir="${build.tests.dir}">
+            <fileset dir="${tools.dir}/${jboss-embeddable.dir}/conf">
+                <include name="*.properties"/>
+                <include name="*.xml"/>
+            </fileset>
+        </copy>
+
+        <path id="testng.path">
+            <pathelement location="${ejb.dir}/${target.dir}/${classes.dir}"/>
+            <pathelement location="${build.tests.dir}/${classes.dir}"/>
+            <pathelement location="${build.tests.dir}"/>
+
+            <fileset dir="${ejb.dir}/${target.dir}">
+                <include name="${jar.file}"/>
+            </fileset>
+            <fileset dir="${jboss-embeddable.libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+            <fileset dir="${tools.dir}/${testNG.dir}/${libs.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </path>
+
+        <taskdef name="testng" classpath="${tools.dir}/${testNG.dir}/${libs.dir}/testng-5.8-jdk15.jar"
+                 classname="org.testng.TestNGAntTask"/>
+
+        <testng outputDir="${build.tests.dir}/test-report" verbose="2">
+            <classpath>
+                <path refid="testng.path"/>
+            </classpath>
+            <classfileset dir="${build.tests.dir}/${classes.dir}" includes="**/${test.class}.class"/>
+        </testng>
+    </target>
+
+        <target name="(dev) ear" depends="war, ejb" description="Compile and Create EAR">
+        <!-- Create Final EAR -->
+        <ear destfile="${target.dir}/${ear.file}"
+             appxml="${config.dir}/application-without-lic-management-development.xml">
+            <!--<filename name="${config.dir}/jboss-app.xml"/>-->
+            <fileset file="${war.dir}/${target.dir}/${war.file}"/>
+            <fileset file="${ejb.dir}/${target.dir}/${jar.file}"/>
+            <fileset dir="${ejb.dir}/${libs.dir}" excludes="${libs.ebj.excluded.dev}"/>
+        </ear>
+    </target>
+
+    <target name="(dev) deploy" depends="(dev) ear"
+            description="Compile, create EAR and copy it to deploy directory">
+        <copy todir="${deploy.dir}">
+            <fileset file="${target.dir}/${ear.file}"/>
+        </copy>
+    </target>
+
+    <target name="(dev) deploy-ear-exploded" depends="compile"
+            description="Compile, create EAR exploded  and copy it to deploy directory ">
+
+        <copy todir="${deploy.dir}/${ear.file}">
+            <fileset dir="${ejb.dir}/${libs.dir}" excludes="${libs.ebj.excluded.dev}"/>
+        </copy>
+
+        <!--<copy todir="${deploy.dir}/${ear.file}/META-INF">
+            <fileset file="${config.dir}/jboss-app.xml"/>
+        </copy>-->
+
+        <copy file="${config.dir}/application-without-lic-management-development.xml"
+              tofile="${deploy.dir}/${ear.file}/META-INF/application.xml"/>
+
+        <copy todir="${deploy.dir}/${ear.file}/${jar.file}">
+            <fileset dir="${ejb.dir}/${target.dir}/${classes.dir}"/>
+            <fileset dir="${ejb.dir}/${src.dir}/${main.dir}/${resources.dir}"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}/WEB-INF">
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${webapp}/${web-inf}"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}/${web-inf}/lib">
+            <fileset dir="${war.dir}/${libs.dir}" excludes="${libs.war.excluded}"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}/${web-inf}/classes">
+            <fileset dir="${war.dir}/${target.dir}/classes"/>
+        </copy>
+
+        <copy todir="${deploy.dir}/${ear.file}/${war.file}">
+            <fileset dir="${war.dir}/${src.dir}/${main.dir}/${webapp}" excludes="WEB-INF"/>
+        </copy>
+    </target>
+
+    <target name="(dev) touch-ear-exploded" depends="(dev) deploy-ear-exploded" description="Touch application.xml">
+        <touch file="${deploy.dir}/${ear.file}/META-INF/application.xml"/>
+    </target>
+
+
+</project>

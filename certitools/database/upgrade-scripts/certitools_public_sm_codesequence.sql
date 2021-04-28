@@ -1,0 +1,2 @@
+INSERT INTO public.sm_codesequence (id, code, year, value, contract_id) VALUES (1, 'CORRECTIVE_ACTION', 2018, 1, 658);
+INSERT INTO public.sm_codesequence (id, code, year, value, contract_id) VALUES (2, 'ACTIVITY', 2018, 1, 658);

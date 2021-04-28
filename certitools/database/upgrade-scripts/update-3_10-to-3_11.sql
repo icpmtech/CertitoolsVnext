@@ -1,0 +1,2 @@
+INSERT INTO configuration ("key", "value", className, editable) VALUES ('certitools.docxExport.docxExportEnabled', 1, 'java.lang.Long', true);
+INSERT INTO configuration ("key", "value", className, editable) VALUES ('certitools.docxExport.applyAligmnentAllParagraphsFix', 1, 'java.lang.Long', true);

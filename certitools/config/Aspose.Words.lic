@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>certitecna</LicensedTo>
+    <LicenseType>Developer Enterprise Subscription</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>100805083041</OrderID>
+    <OEM>This is not a non-redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Words for Java</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>69bf0d54-9553-4454-9cc1-f262c463aad3</SerialNumber>
+    <SubscriptionExpiry>20110805</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>y5OXRHWSzJVfd5PeWnn4GIowANSGJRXQsGPxZ+fgnjQYG3jS8jrOEmFCjluZlLMOsrvRmBQvx5e/3Wx6xwoWY52H13eVGDwaAO3oHve5Ua7w/CVeMAA90bUgiA+lFJi/vq2AVnU9+TBjW+nC+WqBrstsev6PJGEYyOipzpEY/Xk=</Signature>
+</License>

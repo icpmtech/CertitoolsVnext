@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE configuration SYSTEM "http://jackrabbit.apache.org/dtd/indexing-configuration-1.0.dtd">
+<configuration
+               xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+               xmlns:certitools="http://www.certitools.com/jcr/certitools/"
+               xmlns:jcr="http://www.jcp.org/jcr/1.0">
+
+    <index-rule nodeType="certitools:document">
+        <property boost="5">jcr:fullDrTitle</property>
+        <property boost="4">jcr:customTitle</property>
+        <property boost="3">jcr:keywords</property>
+        <property boost="2.5">jcr:summary</property>
+        <property boost="1">jcr:customAbstract</property>
+        <property boost="0.5">jcr:data</property>
+        <property boost="1">jcr:publish</property>
+    </index-rule>
+</configuration>

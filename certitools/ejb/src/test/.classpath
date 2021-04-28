@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/testng-5.8-jdk15"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/libs2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/libs"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/libs1"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/main"/>
+	<classpathentry kind="output" path="C:/Git/CERTITOOLS/implementation-certitecna/certitools/out/production/test"/>
+</classpath>

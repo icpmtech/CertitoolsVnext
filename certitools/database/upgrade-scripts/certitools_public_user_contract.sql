@@ -1,0 +1,15 @@
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (658, 94658, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (657, 94658, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (656, 94658, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (658, 4697, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9, 22, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9636, 94653, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9636, 94654, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9636, 94655, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9636, 94659, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9636, 94665, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9636, 94666, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9637, 94653, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9637, 94656, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9637, 94667, null, null);
+INSERT INTO public.user_contract (contract_id, user_id, validitystartdate, validityenddate) VALUES (9637, 94657, null, null);

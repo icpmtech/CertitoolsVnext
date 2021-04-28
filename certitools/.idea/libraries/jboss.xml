@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="jboss">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/config/jboss/postgresql-8.3-603.jdbc4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/jcr-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/cglib-3.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/commons-beanutils-1.9.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/commons-compress-1.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/commons-lang-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/jackrabbit-ocm-1.5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/config/jboss/jackrabbit-ocm-nodemanagement-1.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="libs1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jboss-ejb3x.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jackrabbit-ocm-nodemanagement-1.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jboss-transaction.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jboss-j2ee.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jboss-annotations-ejb3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/cglib-3.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-beanutils-1.9.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-codec-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-io-2.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-lang3-3.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jackrabbit-api-2.8.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jackrabbit-core-2.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jackrabbit-jcr-commons-2.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jcr-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jbosssx-5.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-lang-2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/commons-compress-1.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/jackrabbit-ocm-1.5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ejb/libs/hibernate-core-3.5.5-Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

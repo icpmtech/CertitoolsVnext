@@ -1,0 +1,14 @@
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (4770, 'Gestor do PEI', 656, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (4771, 'Gestor do PEI', 657, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (4772, 'security.permission.basic', 658, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (4773, 'security.permission.intermediate', 658, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (4774, 'security.permission.expert', 658, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94630, 'security.permission.expert', 9636, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94629, 'security.permission.intermediate', 9636, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94628, 'security.permission.basic', 9636, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94633, 'security.permission.expert', 9637, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94632, 'security.permission.intermediate', 9637, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94631, 'security.permission.basic', 9637, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94636, 'security.permission.expert', 9638, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94635, 'security.permission.intermediate', 9638, false);
+INSERT INTO public.permission (id, name, contract_id, userregisterbasepermission) VALUES (94634, 'security.permission.basic', 9638, false);

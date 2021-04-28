@@ -1,0 +1,2 @@
+INSERT INTO public.sm_chat (id, user_id, emergencyuser_id, message, datetime, emergencyaction_id, activity_id, maintenance_id, anomaly_id, securityimpactwork_id, correctiveaction_id) VALUES (1, 4697, null, 'Brutal', '2018-02-23 17:37:27.298000', null, 1, null, null, null, null);
+INSERT INTO public.sm_chat (id, user_id, emergencyuser_id, message, datetime, emergencyaction_id, activity_id, maintenance_id, anomaly_id, securityimpactwork_id, correctiveaction_id) VALUES (2, 94658, null, 'eheh', '2018-02-23 17:37:46.578000', null, 1, null, null, null, null);

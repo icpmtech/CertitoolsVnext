@@ -1,0 +1,1 @@
+INSERT INTO public.sm_recurrence (id, recurrencetype_id, warningdays, nextscheduleddate, active, entitytype) VALUES (1, 2, 7, '2018-03-23 00:00:00.000000', true, 'ACTIVITY');

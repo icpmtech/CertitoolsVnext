@@ -1,0 +1,13 @@
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (658, 94658, 4774);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (657, 94658, 4771);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (656, 94658, 4770);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (658, 4697, 4772);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9636, 94653, 94630);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9636, 94654, 94629);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9636, 94655, 94628);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9636, 94665, 94629);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9636, 94666, 94628);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9637, 94653, 94633);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9637, 94656, 94632);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9637, 94667, 94632);
+INSERT INTO public.user_contract_permission (usercontracts_contract_id, usercontracts_user_id, permissions_id) VALUES (9637, 94657, 94631);

@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="libs2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/war/libs/displaytag-1.2-certitools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/stripes-security-1.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/iText-2.1.6-certitools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/displaytag-export-poi-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/cachefilter-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/commons-compress-1.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/commons-fileupload-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/commons-io-2.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/commons-lang3-3.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/itext-rtf-2.1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/java-core-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/imageinfo-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/slf4j-api-1.5.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/jsp-api-6.0.53.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/el-api-6.0.53.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/servlet-api-6.0.53.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/sitemesh-2.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/urlrewrite-4.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/poi-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/opencsv-5.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/stripejb3-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/stripes-1.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/aspose-words-21.4-jdk16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/war/libs/htmlcleaner-2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
